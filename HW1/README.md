@@ -1,6 +1,6 @@
 # NYCU Computer Vision 2025 Spring HW1
 
-StudentID: 313553041
+StudentID: 313553041  
 Name: 盧育霆
 
 
