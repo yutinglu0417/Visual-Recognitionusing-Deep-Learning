@@ -14,9 +14,9 @@ My idea is to modify the ResNeXt model by adding CBAM to each layer for channel 
 
 ## How to install
 
-Download the requirements.txt file
-Then do the: pip install -r requirements.txt
-It will auto install numpy, torchtorchvision, matplotlib, opencv-python
+Download the requirements.txt file  
+Then do the: pip install -r requirements.txt  
+It will auto install numpy, torchtorchvision, matplotlib, opencv-python  
 
 
 ## Performance snapshot
