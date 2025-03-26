@@ -2,6 +2,7 @@ import torch.nn as nn
 import math
 from cbam import *
 
+
 def conv3x3(in_planes, out_planes, stride=1):
     """3x3 convolution with padding"""
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
@@ -11,7 +12,8 @@ def conv3x3(in_planes, out_planes, stride=1):
 class BasicBlock(nn.Module):
     expansion = 1
 
-    def __init__(self, inplanes, planes, stride=1, downsample=None, num_group=32):
+    def __init__(self, inplanes, planes, stride=1,
+                 downsample=None, num_group=32):
         super(BasicBlock, self).__init__()
         self.conv1 = conv3x3(inplanes, planes*2, stride)
         self.bn1 = nn.BatchNorm2d(planes*2)
@@ -43,12 +45,14 @@ class BasicBlock(nn.Module):
 class Bottleneck(nn.Module):
     expansion = 4
 
-    def __init__(self, inplanes, planes, stride=1, downsample=None, num_group=32):
+    def __init__(self, inplanes, planes, stride=1,
+                 downsample=None, num_group=32):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Conv2d(inplanes, planes*2, kernel_size=1, bias=False)
         self.bn1 = nn.BatchNorm2d(planes*2)
-        self.conv2 = nn.Conv2d(planes*2, planes*2, kernel_size=3, stride=stride,
-                               padding=1, bias=False, groups=num_group)
+        self.conv2 = nn.Conv2d(planes*2, planes*2, kernel_size=3,
+                               stride=stride, padding=1,
+                               bias=False, groups=num_group)
         self.bn2 = nn.BatchNorm2d(planes*2)
         self.conv3 = nn.Conv2d(planes*2, planes * 4, kernel_size=1, bias=False)
         self.bn3 = nn.BatchNorm2d(planes * 4)
@@ -90,12 +94,19 @@ class ResNeXt(nn.Module):
         self.relu = nn.ReLU(inplace=True)
         self.maxpool = nn.MaxPool2d(kernel_size=3, stride=2, padding=1)
 
-        self.bam1, self.bam2, self.bam3 = CBAM(64*4, 16, no_spatial=False), CBAM(128*4, 16, no_spatial=False), CBAM(256*4, 16, no_spatial=False)
+        self.bam1 = CBAM(64*4, 16, no_spatial=False)
+        self.bam2 = CBAM(128*4, 16, no_spatial=False)
+        self.bam3 = CBAM(256*4, 16, no_spatial=False)
+
         # self.bam1, self.bam2, self.bam3 = None, None, None
-        self.layer1 = self._make_layer(block, 64, layers[0], num_group)
-        self.layer2 = self._make_layer(block, 128, layers[1], num_group, stride=2)
-        self.layer3 = self._make_layer(block, 256, layers[2], num_group, stride=2)
-        self.layer4 = self._make_layer(block, 512, layers[3], num_group, stride=2)
+        self.layer1 = self._make_layer(
+            block, 64, layers[0], num_group)
+        self.layer2 = self._make_layer(
+            block, 128, layers[1], num_group, stride=2)
+        self.layer3 = self._make_layer(
+            block, 256, layers[2], num_group, stride=2)
+        self.layer4 = self._make_layer(
+            block, 512, layers[3], num_group, stride=2)
         self.avgpool = nn.AvgPool2d(7, stride=1)
         self.fc = nn.Linear(512 * block.expansion, num_classes)
 
@@ -117,7 +128,8 @@ class ResNeXt(nn.Module):
             )
 
         layers = []
-        layers.append(block(self.inplanes, planes, stride, downsample, num_group=num_group))
+        layers.append(block(self.inplanes, planes, stride,
+                            downsample, num_group=num_group))
         self.inplanes = planes * block.expansion
         for i in range(1, blocks):
             layers.append(block(self.inplanes, planes, num_group=num_group))
@@ -148,7 +160,7 @@ class ResNeXt(nn.Module):
         return x, x_conloss
 
 
-def resnext18( **kwargs):
+def resnext18(**kwargs):
     """Constructs a ResNeXt-18 model.
     """
     model = ResNeXt(BasicBlock, [2, 2, 2, 2], **kwargs)
