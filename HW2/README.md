@@ -1,4 +1,4 @@
-# NYCU Computer Vision 2025 Spring HW1
+# NYCU Computer Vision 2025 Spring HW2
 
 StudentID: 313553041  
 Name: 盧育霆
@@ -6,7 +6,7 @@ Name: 盧育霆
 
 ## Introduction
 
-My idea is to modify the ResNeXt model by adding CBAM to each layer for channel attention. Leveraging the properties of ResNeXt, the high-dimensional convolutional layers are grouped into multiple identical convolutional layers for convolution operations. Utilizes the channel attention and spatial attention in CBAM to emphasize important channels, suppress unimportant channels, highlight significant spatial regions, and ignore irrelevant background information. In the loss function, in addition to using CrossEntropy, Contrastive Loss is also added.
+In this homework, we were asked to perform house number recognition. First, we need to locate the numbers in the image and find appropriate bounding boxes to enclose them. Next, we need to recognize the numbers in the image. For the model requirements, we are only allowed to use the Faster R-CNN architecture. We can only modify the backbone network, region proposal network, and head. In this homework, I made adjustments to the region proposal network and do some data augmentation. Expert to improve the performance.
 
 ![Image](https://github.com/user-attachments/assets/b7362dda-e691-4405-aac9-ced973c29f9c)
 
