@@ -22,5 +22,5 @@ It will auto install numpy, torchtorchvision, matplotlib, opencv-python
 A snapshot of the leaderboard
 
 
-![Image](https://github.com/user-attachments/assets/dce88b29-aeec-482e-8c92-a0b5d36ff761)
-![Image](https://github.com/user-attachments/assets/ee9293af-addb-447e-a64f-b1e97cc32b75)
+![Image](https://github.com/user-attachments/assets/1bde5f04-8026-437d-b1d9-cd1bce0b9c05)
+![Image](https://github.com/user-attachments/assets/dad51ad1-27f4-4248-87d7-e3ce6b46c255)
