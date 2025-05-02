@@ -19,8 +19,9 @@ Download the requirements.txt file
 Then do the: pip install -r requirements.txt  
 It will auto install numpy, torchtorchvision, matplotlib, opencv-python  
 
-Execution: python main.py
+Execution: python main.py  
 Note: you should generate all mask in dataset, shown as Figure 1.
+and the image naming rule is [class_num]_[num_pic].tif.
 ![Image](https://github.com/user-attachments/assets/43fff835-4a38-4fa7-aaec-27906bc517d5)
 Figure 1. example of dataset form. 
 
