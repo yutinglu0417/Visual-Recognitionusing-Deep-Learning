@@ -8,8 +8,13 @@ Name: 盧育霆
 
 In this homework, we were asked to implement image denoising. There are two types of image noise in the dataset: rain and snow. For the model requirements, we must use an all-in-one model to denoise images with both types of noise. I used PromptIR [1] to complete this assignment. This model utilizes prompts to achieve all-in-one image denoising. In additional experiments, I modified the prompt architecture and the shallow layer structure. In the final results, the Peak Signal-to-Noise Ratio (PSNR) over 30.
 
-![Image](https://github.com/user-attachments/assets/b7362dda-e691-4405-aac9-ced973c29f9c)
+![Image](https://github.com/user-attachments/assets/f553f666-ef7a-41f5-939f-7d599f90aebd)
 
+![Image](https://github.com/user-attachments/assets/03adbe9d-11cc-4c76-a7c8-5fcb5ca72071)
+
+![Image](https://github.com/user-attachments/assets/225cc727-898d-45b3-8e93-246751f2b2bb)
+
+![Image](https://github.com/user-attachments/assets/78602e8f-e5e9-47c3-a76c-b0f8ab329fe2)
 
 
 ## How to install
