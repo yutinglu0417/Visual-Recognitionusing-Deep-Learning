@@ -22,9 +22,11 @@ Figure 4. visualization of result
 
 ## How to install
 
-Download the requirements.txt file  
-Then do the: pip install -r requirements.txt  
-It will auto install numpy, torchtorchvision, matplotlib, opencv-python  
+Download the requirements.txt file
+Then do the: pip install -r requirements.txt
+It will auto install numpy, torchtorchvision, matplotlib, opencv-python
+
+Execution: python main.py
 
 
 ## Performance snapshot
