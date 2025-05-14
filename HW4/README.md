@@ -1,4 +1,4 @@
-# NYCU Computer Vision 2025 Spring HW1
+# NYCU Computer Vision 2025 Spring HW4
 
 StudentID: 313553041  
 Name: 盧育霆
@@ -6,7 +6,7 @@ Name: 盧育霆
 
 ## Introduction
 
-My idea is to modify the ResNeXt model by adding CBAM to each layer for channel attention. Leveraging the properties of ResNeXt, the high-dimensional convolutional layers are grouped into multiple identical convolutional layers for convolution operations. Utilizes the channel attention and spatial attention in CBAM to emphasize important channels, suppress unimportant channels, highlight significant spatial regions, and ignore irrelevant background information. In the loss function, in addition to using CrossEntropy, Contrastive Loss is also added.
+In this homework, we were asked to implement image denoising. There are two types of image noise in the dataset: rain and snow. For the model requirements, we must use an all-in-one model to denoise images with both types of noise. I used PromptIR [1] to complete this assignment. This model utilizes prompts to achieve all-in-one image denoising. In additional experiments, I modified the prompt architecture and the shallow layer structure. In the final results, the Peak Signal-to-Noise Ratio (PSNR) over 30.
 
 ![Image](https://github.com/user-attachments/assets/b7362dda-e691-4405-aac9-ced973c29f9c)
 
