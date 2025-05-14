@@ -32,6 +32,5 @@ Execution: python main.py
 ## Performance snapshot
 A snapshot of the leaderboard
 
-
-![Image](https://github.com/user-attachments/assets/dce88b29-aeec-482e-8c92-a0b5d36ff761)
-![Image](https://github.com/user-attachments/assets/ee9293af-addb-447e-a64f-b1e97cc32b75)
+![Image](https://github.com/user-attachments/assets/ca5a019d-8ef8-4868-97ea-7572cd9c2ace)
+![Image](https://github.com/user-attachments/assets/fb106109-0326-490c-a86b-493bc5d17bb8)
